@@ -7,10 +7,10 @@ function runCommand(text) {
   const t = text.toLowerCase();
 
   // 🎵 YOUR ONLY COMMAND
-  if (t.includes("play tony")) {
+  if (t.includes("play mix")) {
 
     window.open(
-      "https://www.youtube.com/watch?v=wALHel_YMQg",
+      "https://youtube.com/playlist?list=PLrJ7l1lrjsHZzruihsClswv15iUlO4al6&si=b8ZbLgygS0VYbZ2j",
       "_blank"
     );
 
