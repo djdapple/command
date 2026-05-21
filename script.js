@@ -1,44 +1,19 @@
-const input = document.getElementById("input");
-const btn = document.getElementById("btn");
+document.getElementById("btn").onclick = run;
 
-function runCommand(text) {
-
-  const t = text.toLowerCase().trim();
-
-  // 🎵 PLAY MIX
-  if (t === "play mix") {
-    window.open(
-      "https://youtube.com/playlist?list=PLrJ7l1lrjsHZzruihsClswv15iUlO4al6&si=b8ZbLgygS0VYbZ2j",
-      "_blank"
-    );
-    return;
-  }
-
-  // 🎧 OPEN SOUNDCLOUD
-  if (t === "open soundcloud") {
-    window.open(
-      "https://on.soundcloud.com/Q62wFisuboT0qNnY9d",
-      "_blank"
-    );
-    return;
-  }
-
-  // ❌ DO NOTHING FOR ANYTHING ELSE
-  return;
-}
-
-function execute() {
-
-  const text = input.value;
-  if (!text) return;
-
-  runCommand(text);
-
-  input.value = "";
-}
-
-btn.addEventListener("click", execute);
-
-input.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") execute();
+document.getElementById("input").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") run();
 });
+
+function run() {
+  const t = document.getElementById("input").value.toLowerCase().trim();
+
+  if (t === "play mix") {
+    window.open("https://youtube.com/playlist?list=PLrJ7l1lrjsHZzruihsClswv15iUlO4al6&si=b8ZbLgygS0VYbZ2j");
+  }
+
+  if (t === "open soundcloud") {
+    window.open("https://on.soundcloud.com/Q62wFisuboT0qNnY9d");
+  }
+
+  document.getElementById("input").value = "";
+}
