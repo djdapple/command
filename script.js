@@ -3,10 +3,12 @@ const btn = document.getElementById("btn");
 const output = document.getElementById("output");
 
 function runCommand(text) {
+
   const t = text.toLowerCase().trim();
 
-  // 🎵 PLAY MIX COMMAND
+  // 🎵 ONLY COMMAND
   if (t.includes("play mix")) {
+
     window.open(
       "https://youtube.com/playlist?list=PLrJ7l1lrjsHZzruihsClswv15iUlO4al6&si=b8ZbLgygS0VYbZ2j",
       "_blank"
@@ -19,12 +21,14 @@ function runCommand(text) {
 }
 
 function execute() {
+
   const text = input.value.trim();
   if (!text) return;
 
   const result = runCommand(text);
 
   output.innerText = result;
+
   input.value = "";
 }
 
