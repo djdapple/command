@@ -5,7 +5,7 @@ document.getElementById("input").addEventListener("keypress", function(e) {
 });
 
 function run() {
-  const t = document.getElementById("input").value.toLowerCase().trim();
+  const t = input.value.toLowerCase().trim();
 
   if (t === "play mix") {
     window.open("https://youtube.com/playlist?list=PLrJ7l1lrjsHZzruihsClswv15iUlO4al6&si=b8ZbLgygS0VYbZ2j");
@@ -15,5 +15,9 @@ function run() {
     window.open("https://on.soundcloud.com/Q62wFisuboT0qNnY9d");
   }
 
-  document.getElementById("input").value = "";
+  if (t === "open gmail") {
+    window.open("https://mail.google.com");
+  }
+
+  input.value = "";
 }
