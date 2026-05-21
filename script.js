@@ -1,33 +1,24 @@
 const input = document.getElementById("input");
 const btn = document.getElementById("btn");
-const output = document.getElementById("output");
 
 function runCommand(text) {
 
   const t = text.toLowerCase().trim();
 
-  // 🎵 ONLY COMMAND
-  if (t.includes("play mix")) {
-
+  // ONLY EXACT MATCH
+  if (t === "play mix") {
     window.open(
       "https://youtube.com/playlist?list=PLrJ7l1lrjsHZzruihsClswv15iUlO4al6&si=b8ZbLgygS0VYbZ2j",
       "_blank"
     );
-
-    return "Playing mix...";
   }
-
-  return "Command not found.";
 }
 
 function execute() {
-
-  const text = input.value.trim();
+  const text = input.value;
   if (!text) return;
 
-  const result = runCommand(text);
-
-  output.innerText = result;
+  runCommand(text);
 
   input.value = "";
 }
